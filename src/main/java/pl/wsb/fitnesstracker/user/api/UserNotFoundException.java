@@ -8,10 +8,20 @@ import pl.wsb.fitnesstracker.exception.api.NotFoundException;
 @SuppressWarnings("squid:S110")
 public class UserNotFoundException extends NotFoundException {
 
-    private UserNotFoundException(String message) {
+    /**
+     * Creates a UserNotFoundException with a custom message.
+     *
+     * @param message the error message
+     */
+    public UserNotFoundException(String message) {
         super(message);
     }
 
+    /**
+     * Creates a UserNotFoundException for a user with the given ID.
+     *
+     * @param id the ID of the user that was not found
+     */
     public UserNotFoundException(Long id) {
         this("User with ID=%s was not found".formatted(id));
     }
